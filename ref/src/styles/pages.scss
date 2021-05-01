@@ -1,0 +1,159 @@
+@import './common.scss';
+
+// --------------------------------------------------
+// CreatorGrid.jsx
+// --------------------------------------------------
+
+#creator-grid {
+
+    .creator-card {
+        text-align: center;
+        border: $border;
+
+        p {
+            border-top: $border;
+            padding: 13px 0;
+        }
+    }
+
+}
+
+
+
+// --------------------------------------------------
+// PlaylistGrid.jsx
+// --------------------------------------------------
+
+#playlist-grid {
+    .playlist-card {
+        border: $border;
+    }
+}
+
+
+
+// --------------------------------------------------
+// Creator.jsx
+// --------------------------------------------------
+
+.creator {
+    margin: 0 $space / 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space;
+
+    .creator-header {
+        display: flex;
+        border: 1px solid black;
+        grid-column: span 2;
+
+        .gatsby-image-wrapper {
+            flex: 0 0 calc( 25% - #{ $space / 2 });
+            border-left: 1px solid black;
+        }
+
+        div {
+            flex: 0 0 calc( 75% + #{ $space / 2 });
+
+            display: grid;
+            place-items: center;
+            background-color: $background-accent;
+        }
+    }
+
+    .scroll-helper {
+        grid-column: span 2;
+        height: 68px;
+        display: flex;
+        align-items: center;
+
+        button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            svg {
+                pointer-events: none;
+            }
+        }
+    }
+
+    .left, .right {
+        height: calc(100vh - 82px);
+        overflow: scroll;
+
+        section {
+            border: 1px solid black;
+            margin-bottom: 13px;
+
+            .section-title {
+                text-align: center;
+                border-bottom: 1px solid black;
+            }
+
+            p {
+                padding: 13px;
+
+                &:not(.section-title):last-child {
+                    padding-bottom: 0;
+                }   
+            }
+
+            a {
+                padding: 13px;
+                border-bottom: 1px solid black;
+
+                &:last-child {
+                    border-bottom: 0;
+                }  
+            }
+        }
+    }
+
+    .right {
+        .image-wrapper {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+@media screen and (max-width: $size-tablet) {
+    .creator {
+        grid-template-columns: repeat(1, 1fr);
+        
+        .creator-header {
+            grid-column: span 1;
+        }
+
+        .scroll-helper {
+            display: none;
+        }
+    
+        .left, .right {
+            height: fit-content;
+        }
+    }
+}
+
+
+
+// --------------------------------------------------
+// Zine.jsx
+// --------------------------------------------------
+
+#zine {
+    .zine-page {
+        border: $border;
+
+        .page-number {
+            border-bottom: $border;
+            padding: 8px;
+        }
+    }
+}
+
+@media screen and (max-width: $size-mobile) {
+    .zine-page {
+        margin-bottom: 12px;
+    }
+}

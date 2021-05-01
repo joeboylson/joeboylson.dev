@@ -1,0 +1,26 @@
+.project {
+
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .header {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+}

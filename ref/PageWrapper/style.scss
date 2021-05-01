@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: none;
+}
+
+#___gatsby {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#pagewrapper {
+    height: 100vh;
+    width: 100vw;
+    display: fixed;
+    top: 0;
+    right: 0;
+}
+
+#pagewrapper-inner {
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.19,1,0.22,1);
+}

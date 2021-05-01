@@ -1,0 +1,303 @@
+@import './common.scss';
+
+// --------------------------------------------------
+// Nav.jsx
+// --------------------------------------------------
+
+nav {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $background-accent;
+    
+    border-bottom: 1px solid $foreground;
+    z-index: +1;
+    
+    .row {
+        
+        display: flex;
+        height: 34px;
+
+        .nav-item {
+            flex: 0 0 25%;
+            outline: $border-width solid $foreground;
+    
+            a {
+                text-align: center;
+                background-color: $background-accent;
+                width: calc(100% - 2px);
+                height: 34px;
+                line-height: 34px;
+            }
+        }
+
+        .subtitle {
+            display: block;
+            flex: 0 0 calc(75% - 11px);
+            margin: 0 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-wrapper {
+            flex: 0 0 25%;
+            display: grid;
+            place-items: center;
+            border-left: $border-width solid $foreground;
+            
+            a {
+                height: 24px;
+                display: flex;
+                place-items: center;
+            }
+
+            p {
+                height: 22px;
+            }
+        }
+
+    }
+    
+}
+
+nav + div {
+    padding-top: 34px + 34px + 13px;
+}
+
+// --------------------------------------------------
+// PageWrapper.jsx
+// --------------------------------------------------
+
+#page-wrapper {
+    min-height: 100vh;
+}
+
+
+
+// --------------------------------------------------
+// Footer.jsx
+// --------------------------------------------------
+
+#footer {
+    min-height: 30vh;
+    background-color: $foreground-accent;
+    color: $background;
+    display: flex;
+    margin-top: 13px;
+
+    * {
+        color: $background;
+    }
+
+    .footer-column {
+        flex: 0 0 50%;
+        display: grid;
+        place-items: center;
+
+        a {
+            padding: 5px 0;
+            font-size: 22px;
+        }
+
+        &:first-child {
+            border-right: 1px solid white;
+        }
+    }
+}
+
+@media screen and (max-width: $size-tablet) {
+    #footer {
+        flex-direction: column;
+
+        .footer-column {
+            min-height: 20vh;
+        }
+    }
+}
+
+
+
+// --------------------------------------------------
+// PlaylistCard.jsx
+// --------------------------------------------------
+
+.playlist-card {
+    .playlist-card-body {
+        
+        .name, .description {
+            border-top: $border;
+            padding: 13px;
+        }
+
+        .name {
+            display: grid;
+            place-items: center;
+            border-bottom: none;
+
+            * {
+                display: inline-block
+            }
+        }
+
+        .description {
+            border-bottom: none;     
+        }
+
+        .play-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+            border-top: $border;
+
+            a {
+                border-bottom: 0;
+                height: 24px;
+                padding: 13px;
+            }
+
+            button {
+                display: grid;
+                place-items: center;
+                border: none;
+                padding: 13px;
+                background-color: transparent;
+                outline: none;
+            }  
+        }
+
+    }
+}
+
+
+
+// --------------------------------------------------
+// Playlist.jsx
+// --------------------------------------------------
+
+.playlist {
+
+    $header-height: 34px;
+    $playlist-width: 300px;
+    $playlist-height: 400px;
+
+    width: $playlist-width;
+    height: $playlist-height;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: $header-height;
+    right: 0;
+    background-color: black;;
+    z-index: +1;
+
+    &.hidden {
+        display: none;
+    }
+
+    &.collapsed {
+        transform: translateY(100%);
+
+        .header svg {
+            transform: rotate(0deg);
+        }
+    }
+
+    .loading-indicator {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, calc(-50% + #{$header-height}) );
+
+        width: $playlist-width;
+        height: $playlist-height;
+        
+        display: grid;
+        place-items: center;
+        background-color: black;
+
+        p {
+            color: white;
+        }
+    }
+
+    .header {
+        height: 34px;
+        width: 100%;
+        text-align: center;
+        background-color: transparent;
+        outline: none;
+        border: none;
+
+        svg {
+            fill: white !important;
+            transform: rotate(180deg);
+        }
+    }
+
+    iframe {
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+
+        width: $playlist-width;
+        min-height: $playlist-height;
+
+    }
+}
+
+
+
+// --------------------------------------------------
+// notify.js
+// --------------------------------------------------
+
+.notification {
+
+    $distance: -355px;
+
+    position: fixed;
+    top: 0;
+    right: $distance;
+    width: 300px;
+    margin: 89px 16px;
+    padding: 8px;
+    transition-duration: 0.25s;
+    
+    &.fade-in {
+        transform: translateX($distance);
+    }
+
+    &.info {
+        
+        outline: 3px solid #2f54eb;
+        p { color: #2f54eb; }
+    }
+
+    &.success {
+        outline: 3px solid #52c41a;
+        p { color: #52c41a; }
+    }
+
+    &.warning {
+        outline: 3px solid #d4b106;
+        p { color: #d4b106; }
+    }
+
+    &.error {
+        outline: 3px solid #f5222d;
+        p { color: #f5222d; }
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+
+.portable-text {
+    padding: 13px 0;
+}
