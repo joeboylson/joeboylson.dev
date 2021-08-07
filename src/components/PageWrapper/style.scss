@@ -1,14 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    overscroll-behavior-y: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#___gatsby {
-    max-width: 1200px;
-    margin: auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;500;600&family=Roboto:wght@300;500;700&display=swap');
+@import '~/locomotive-scroll/dist/locomotive-scroll.min.css';
+@import './variables.scss';
 
 @font-face {
     font-family: 'Migra';
@@ -41,39 +33,66 @@
 // --------------------------------------------------------------------------------
 
 @function strip-unit($number) {
-    @if type-of($number) == 'number' and not unitless($number) {
-      @return $number / ($number * 0 + 1);
+    @if type-of($number)=='number'and not unitless($number) {
+        @return $number / ($number * 0 + 1);
     }
 
     @return $number;
 }
 
-$size-tablet: 850px;
-$size-mobile: 650px;
+@function convert($value, $currentUnit, $convertUnit) {
+    @if $currentUnit==px {
 
-$nav-width: 130px;
-$nav-width-value: strip-unit(130px);
-$border-width: 1px;
-$border-width-value: strip-unit($border-width);
+        @if $convertUnit==ems {
+            @return $value / 16+0em;
+        }
 
-$background: white;
-$background-accent: #e9e7f0;
-$foreground: #2C2C2C;
-$foreground-accent: #014afe;
+        @else if $convertUnit==percent {
+            @return percentage($value / 16);
+        }
 
-$secondary-background: #014afe;
-$secondary-background-accent: #2C2C2C;
-$secondary-foreground: ghostwhite;
-$secondary-foreground-accent: #e9e7f0;
+    }
 
-:export {
-    navWidth: $nav-width;
-    navWidthValue: $nav-width-value;
-    borderWidth: $border-width;
-    borderWidthValue: $border-width-value;
-    background: $background;
-    foreground: $foreground;
+    @else if $currentUnit==ems {
+
+        @if $convertUnit==px {
+            @return $value * 16+0px;
+        }
+
+        @else if $convertUnit==percent {
+            @return percentage($value);
+        }
+
+    }
+
+    @else if $currentUnit==percent {
+
+        @if $convertUnit==px {
+            @return $value * 16 / 100+0px;
+        }
+
+        @else if $convertUnit==ems {
+            @return $value / 100+0em;
+        }
+
+    }
+
+    @else if $currentUnit==pts {
+
+        @if $convertUnit==px {
+            @return $value * 1.3333+0px;
+        }
+
+        @else if $convertUnit==ems {
+            @return $value / 12+0em;
+        }
+
+        @else if $convertUnit==percent {
+            @return percentage($value / 12)
+        }
+    }
 }
+
 
 * {
     margin: 0;
@@ -83,11 +102,11 @@ $secondary-foreground-accent: #e9e7f0;
     text-decoration: none;
 
     // default font style
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 30px;
     color: $foreground;
-    font-weight: 200;
+    // font-weight: 200;
 
     cursor: crosshair !important;
 
@@ -103,35 +122,92 @@ $secondary-foreground-accent: #e9e7f0;
 
 body {
     background-color: $background;
+    height: 100vh;
+    overflow: hidden;
 }
 
 h1 {
     font-family: Migra;
-    font-size: 60px;
-    line-height: 70px; /* 10px */
+    font-size: 96px;
+    line-height: 106px;
     font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 h2 {
     font-family: Migra;
-    font-size: 48px;
-    line-height: 56px; /* 8px */
+    font-size: 72px;
+    line-height: 80px;
     font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
-h3, h3 b {
+h3 {
     font-family: Migra;
-    font-size: 36px;
-    line-height: 42px; /* 6px */
+    font-size: 48px;
+    line-height: 54px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+h3 b,
+p b {
+    font-weight: 600;
+}
+
+p,
+a,
+span {
+    display: block
+}
+
+a {
+    color: $foreground-accent;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.emph {
+    font-family: Migra;
+}
+
+.bold {
     font-weight: 800;
 }
 
-h3 b, p b { font-weight: 800; }
-p, a, span { display: block }
-a { color: $foreground-accent; }
-img { width: 100%; }
+.small {
+    font-size: 16px;
+}
+
+.mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+@media screen and (max-width: $size-tablet) {
+    #___gatsby {
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: $size-mobile) {
+    #___gatsby {
+        padding: 8px;
+    }
+}
 
 
+// 
 
-// @media screen and (max-width: $size-tablet) {}
-
+.column-gap24 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

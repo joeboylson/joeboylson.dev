@@ -1,0 +1,17 @@
+.web-screenshot {
+
+  .psuedo-browser {
+    border: 1px solid black;
+    // box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+
+    .psuedo-browser-header {
+      height: 16px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-bottom: 1px solid black;
+    }
+  }
+}

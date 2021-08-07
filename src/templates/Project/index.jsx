@@ -1,10 +1,11 @@
 import React from "react";
-import PortableText from "../../components/PortableText";
-import Image from 'gatsby-image';
 import { graphql } from "gatsby";
 
+import Tabs from "../../components/Tabs"
+import WebScreenshot from "../../components/WebScreenshot";
+import FlexTitle from "../../components/FlexTitle";
+
 import './style.scss';
-import TitledBlock from "../../components/TitledBlock";
 
 export const query = graphql`
   query ($slug: String!) {
@@ -14,17 +15,35 @@ export const query = graphql`
   }
 `;
 
-const Project = (props) => {
+const Project = ({data: {project}}) => {
 
-  const { project } = props.data;
+  // const { project } = data;
   const { description, impact, name, photos, synopsis, technologyThoughts, thumbnail, externalLinks } = project;
 
   return (
     <div className="project">
 
-        <div className="header">
+      <FlexTitle text={`Hi, I'm Joe`}/>
+
+      <h1>Hi, I'm Joe</h1>
+      <h2>Hi, I'm Joe</h2>
+
+      <Tabs
+        title="Likes & Dislikes"
+        tabs={[
+          { title: "What I like" },
+          { title: "What I dislike" },
+        ]}
+      />
+
+      <WebScreenshot fluid={{...thumbnail.asset.fluid }}/>
+      <WebScreenshot fluid={{...thumbnail.asset.fluid }}/>
+      <WebScreenshot fluid={{...thumbnail.asset.fluid }}/>
+      <WebScreenshot fluid={{...thumbnail.asset.fluid }}/>
+      <WebScreenshot fluid={{...thumbnail.asset.fluid }}/>
+
+        {/* <div className="header">
           <h1>{name}</h1>
-          <Image fluid={{...thumbnail.asset.fluid }}/>
         </div>
 
         <div className="body">
@@ -56,7 +75,7 @@ const Project = (props) => {
           <div className="gallery">
             { photos.map( (photo, i) => <Image key={i} fluid={{ ...photo.asset.fluid }}/>) }
           </div>
-        </TitledBlock>
+        </TitledBlock> */}
 
     </div>
   )

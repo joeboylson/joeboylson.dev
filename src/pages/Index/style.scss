@@ -1,0 +1,108 @@
+#page-index {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  max-width: 1200px;
+  margin: auto;
+}
+
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  margin: 24px;
+  background-color: #014afe;
+}
+
+#page-index-grid {
+  
+  $unit: 60px;
+
+  $border: 1px solid #014afe;
+  
+  @mixin placement($top, $left, $width, $height) {
+    position: absolute;
+    background-color: white;
+    top: $unit * $top;
+    left: $unit * $left;
+    width: calc( (#{$unit} * #{$width}) - 2px);
+    height: calc( (#{$unit} * #{$height}) - 2px);
+  }
+
+  position: relative;
+  width: $unit * 16;
+  height: $unit * 9;
+
+  display: grid;
+  border-top: $border;
+  border-left: $border;
+
+  grid-template-columns: repeat(16, $unit);
+  grid-template-rows: repeat(11, $unit);
+
+  .grid-unit {
+    border-right: $border;
+    border-bottom: $border;  
+  }
+
+  .column-2 {
+    grid-column: span 2;
+  }
+
+  .column-6 {
+    grid-column: span 7;
+  }
+
+  .row-2 {
+    grid-row: span 2;
+  }
+  
+  #greeting {
+    @include placement(0, 0, 8, 2);
+    display: grid;
+    place-items: center;
+  }
+
+  #social {
+    @include placement(8, 0, 3, 1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #bio {
+    @include placement(3, 10, 6, 3);
+    display: flex;
+    flex-direction: column;
+
+    p {
+      padding: 6px 12px 0 12px;
+    }
+  }
+}
+
+#page-index-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  border-top: 1px solid black;
+
+  display: flex;
+
+
+  p {
+    border-right: 1px solid black;
+    padding: 6px 12px;
+  }
+
+  #dimension {
+    border-left: 1px solid black;
+    border-right: 0;
+    margin-left: auto;
+  }
+}

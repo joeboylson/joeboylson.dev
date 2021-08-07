@@ -1,0 +1,24 @@
+.banner {
+  display: flex;
+  gap: 24px;
+
+  animation: bannerAnimation 10s forwards linear;
+
+  &.reverse {
+    animation: bannerAnimation 10s forwards linear reverse;
+  }
+
+  h1 {
+    line-height: 86px;
+    white-space: nowrap;
+  }
+}
+
+@keyframes bannerAnimation {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

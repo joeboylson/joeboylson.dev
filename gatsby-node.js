@@ -10,7 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   createPage({ 
     path: "/", 
-    component: getComponent(`/src/pages/Home/index.jsx`)
+    component: getComponent(`/src/pages/Index/index.jsx`)
   })
   
   const allSanityProject = await graphql(`
