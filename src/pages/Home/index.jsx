@@ -1,12 +1,24 @@
 import React from "react"
+import IndexGreeting from "../../layouts/IndexGreeting";
+import ProjectsList from "../../layouts/ProjectsList";
+import SocialGrid from "../../layouts/SocialGrid";
+
+import './style.scss'
 
 const IndexPage = () => (
-  <div>
-    <p>home</p>
-    <div style={{width: '100px'}}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, repellat quasi, quia earum numquam impedit molestiae, harum ut nam nulla nihil consequuntur doloribus. At sint eaque ad facere optio a provident libero rerum voluptatum labore. Magni corrupti minus possimus, fugit voluptatem hic sed ipsam quos ut labore cupiditate quas maiores nesciunt corporis, vel, asperiores cum aperiam facere. Accusamus dolorum quae quam esse ratione ipsum suscipit hic eos in. Sunt voluptas, nulla saepe fuga repellendus impedit excepturi consequuntur accusantium! Fugit cupiditate cum, dolore quis commodi incidunt maiores magnam nisi suscipit a perferendis error, facere ab quaerat eligendi officia itaque neque, nemo ullam atque repudiandae. Ipsum amet quae deleniti omnis nostrum aut delectus odio, perferendis incidunt magni earum qui repudiandae. Quae optio id nam earum? Fuga quibusdam harum deleniti ut, autem minima at iure dicta sed rem corporis eius! Quo debitis ea saepe rem dolorem nobis omnis vel, facere labore quas a culpa voluptatem ad cumque id. Eligendi nulla inventore cupiditate sed libero laboriosam repellat amet dolores ad fugit exercitationem esse, aliquid delectus nisi. Itaque voluptatibus a voluptatum nisi aperiam eveniet, animi velit cum ducimus asperiores? Molestias, eius? Corrupti dolorem expedita nemo laborum odio atque incidunt mollitia eaque dolore repudiandae, fuga ipsa tempore autem provident exercitationem officia, libero consequatur eum commodi voluptates facilis officiis quibusdam maiores at? Fuga neque voluptatem saepe architecto eveniet. Suscipit aut illum quae voluptatem facilis quia delectus fugiat ratione optio rem, quas, beatae excepturi laboriosam possimus odit sequi iusto. Voluptatibus tempora hic quis consequatur ratione suscipit minus cupiditate vitae, dolore, ipsam maxime eius qui corporis amet facere error temporibus reiciendis pariatur molestiae laboriosam dicta. Nihil corporis dolorem consectetur facilis. Obcaecati dolor quae repudiandae nihil amet eaque, ratione et asperiores ad illum aliquid! Eaque tenetur facilis inventore, corporis similique eum nemo accusamus sit. Obcaecati odit illum culpa quia. Similique incidunt labore, architecto nisi excepturi recusandae temporibus veritatis, iste atque ea asperiores et quisquam dolor reiciendis ipsum delectus mollitia magni. Quas iste accusamus consequuntur omnis laboriosam. Esse excepturi nam eum consectetur libero quidem voluptas accusantium distinctio. Accusamus quaerat adipisci eveniet voluptatem, modi repellat enim autem, voluptates architecto soluta blanditiis molestias aspernatur doloremque accusantium hic omnis natus alias! Quisquam voluptatum expedita voluptates quasi commodi, et alias perferendis illo laudantium at molestiae rem hic! Veritatis sequi laudantium quo consequatur est veniam nam in eaque quos quisquam enim alias assumenda rerum at architecto dignissimos ipsum, similique quia libero nemo? Cumque, fuga. Doloribus laboriosam illum culpa architecto incidunt esse, consequatur optio doloremque, deserunt cupiditate dicta ullam quo soluta aliquam quas illo eum porro at expedita. Reiciendis deleniti consectetur illum. Quis enim id est accusantium ea. Iste esse et deleniti quod placeat aperiam repellat vero animi blanditiis totam maxime itaque deserunt sed odit numquam magnam quas, sit optio quisquam eaque minus, rerum tenetur? Unde, veritatis quo corporis fugiat temporibus esse quidem harum dignissimos! Repellat cupiditate, soluta eaque quo impedit nulla iusto, aut ducimus magnam quae cumque quaerat provident porro magni aperiam! A, nulla. Temporibus iure quia sequi illum vero cum veniam suscipit saepe nam dolor.
+  <div id="index-page">
+
+    <div>
+      <svg viewBox="0 0 70 17" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="13">Hi, I'm Joe</text>
+      </svg>
+
+      <SocialGrid/>
+      <ProjectsList/>
     </div>
+
+    <IndexGreeting/>
   </div>
-)
+);
 
 export default IndexPage

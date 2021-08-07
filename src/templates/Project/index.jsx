@@ -1,10 +1,10 @@
 import React from "react";
 import PortableText from "../../components/PortableText";
 import Image from 'gatsby-image';
+import TitledBlock from "../../components/TitledBlock";
 import { graphql } from "gatsby";
 
 import './style.scss';
-import TitledBlock from "../../components/TitledBlock";
 
 export const query = graphql`
   query ($slug: String!) {
@@ -19,12 +19,14 @@ const Project = (props) => {
   const { project } = props.data;
   const { description, impact, name, photos, synopsis, technologyThoughts, thumbnail, externalLinks } = project;
 
+  const t = thumbnail.asset.fluid
+
   return (
     <div className="project">
 
         <div className="header">
           <h1>{name}</h1>
-          <Image fluid={{...thumbnail.asset.fluid }}/>
+          <Image fluid={{...t}}/>
         </div>
 
         <div className="body">
