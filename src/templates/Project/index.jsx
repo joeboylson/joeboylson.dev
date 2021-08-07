@@ -1,4 +1,7 @@
 import React from "react";
+import PortableText from "../../components/PortableText";
+import Image from 'gatsby-image';
+import TitledBlock from "../../components/TitledBlock";
 import { graphql } from "gatsby";
 
 import Tabs from "../../components/Tabs"
@@ -19,6 +22,8 @@ const Project = ({data: {project}}) => {
 
   // const { project } = data;
   const { description, impact, name, photos, synopsis, technologyThoughts, thumbnail, externalLinks } = project;
+
+  const t = thumbnail.asset.fluid
 
   return (
     <div className="project">

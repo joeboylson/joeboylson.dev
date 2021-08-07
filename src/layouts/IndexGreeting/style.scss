@@ -1,0 +1,21 @@
+#index-greeting {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    #profile-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 24px 0 0;
+
+        section > * {
+            padding-bottom: 12px;
+        }
+    }
+
+    #profile-image-wrapper {
+        width: 50%;
+    }
+
+}

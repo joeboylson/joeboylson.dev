@@ -1,0 +1,38 @@
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+$size-tablet: 850px;
+$size-mobile: 650px;
+
+$nav-width: 130px;
+$nav-width-value: strip-unit(130px);
+$border-width: 1px;
+$border-width-value: strip-unit($border-width);
+
+$background: white;
+$background-accent: #e9e7f0;
+$foreground: #2C2C2C;
+$foreground-accent: #014afe;
+
+$secondary-background: #014afe;
+$secondary-background-accent: #2C2C2C;
+$secondary-foreground: ghostwhite;
+$secondary-foreground-accent: #e9e7f0;
+
+$accent-yellow: #ffeb7b;
+$hover-blue: #013bcb;
+
+:export {
+    navWidth: $nav-width;
+    navWidthValue: $nav-width-value;
+    borderWidth: $border-width;
+    borderWidthValue: $border-width-value;
+    background: $background;
+    foreground: $foreground;
+}
