@@ -1,11 +1,12 @@
 import React from "react"
-import Nav from "../Nav"
-import './style.scss'
 
-const PageWrapper = ({children}) => (
-  <div id="page-wrapper">
-    {children}
-  </div>
-);
+const PageWrapper = ({ children }) => {
+  return (
+    <div>
+      <p>PageWrapper</p>
+      {children}
+    </div>
+  )
+}
 
-export default PageWrapper;
+export default PageWrapper

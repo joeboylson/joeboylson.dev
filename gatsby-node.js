@@ -4,7 +4,7 @@ const getComponent = (_path) => {
   return require.resolve( path.join(__dirname, _path) );
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions }) => {
 
   const { createPage } = actions;
 
@@ -12,26 +12,5 @@ exports.createPages = async ({ graphql, actions }) => {
     path: "/", 
     component: getComponent(`/src/pages/Index/index.jsx`)
   })
-  
-  const allSanityProject = await graphql(`
-    query {
-      allSanityProject {
-        nodes {
-          slug {
-            current
-          }
-        }
-      }
-    }
-  `)
-
-  allSanityProject.data.allSanityProject.nodes.forEach( node => {
-    const slug = node.slug.current;
-    createPage({
-      path: `/project/${slug}/`,
-      component: getComponent(`/src/templates/Project/index.jsx`),
-      context: { slug }
-    });
-  });
 
 }
