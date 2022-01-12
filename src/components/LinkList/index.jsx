@@ -1,5 +1,5 @@
 import React, { useMemo } from "react"
-import FullWidthSolidus from "../FullwidthSolidus";
+import FullWidthSolidus from "../FullWidthSolidus";
 import { Link } from "gatsby"
 import { LinkListContainer } from "./StyledComponents";
 import MigraAsterisk from "../MigraAsterisk";
