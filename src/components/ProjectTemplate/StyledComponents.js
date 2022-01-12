@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 export const ProjectTextContent = styled.div`
     display: flex;
@@ -14,3 +15,6 @@ export const ProjectTextContentItem = styled.div`
     width: 100%;
     max-width: 700px;
 `;
+
+const Component = () => (<span></span>);
+export default Component;

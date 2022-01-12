@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 // eslint-disable-next-line limited-exports-page-templates
 export const GreetingWrapper = styled.div`
@@ -10,3 +11,6 @@ export const GreetingWrapper = styled.div`
         color: var(--foreground-accent);
     }
 `;
+
+const Component = () => (<span></span>);
+export default Component

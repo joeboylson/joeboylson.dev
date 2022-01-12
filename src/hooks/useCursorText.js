@@ -4,6 +4,11 @@ import { isEmpty } from 'lodash';
 const cursorSpanId = "cursor-span"
 
 const findOrCreateCursor = () => {
+
+    if (typeof window === 'undefined' || !window.document) {
+      return;
+    }
+
     const existingCursorSpan = document.getElementById(cursorSpanId);
 
     if (!existingCursorSpan) {
@@ -16,6 +21,11 @@ const findOrCreateCursor = () => {
 }
 
 const makeCursorSpan = () => {
+
+    if (typeof window === 'undefined' || !window.document) {
+      return;
+    }
+
     let cursorSpan = findOrCreateCursor();
     document.body.append(cursorSpan);
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 export const NavContainer = styled.div`
     position: fixed;
@@ -17,3 +18,6 @@ export const NavLinkListWrapper = styled.div`
     margin: auto;
     max-width: calc(1400px - 48px);
 `
+
+const Component = () => (<span></span>);
+export default Component

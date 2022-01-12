@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 export const WebsiteFrameContainer = styled.div`
     border: 1px solid black;
@@ -19,3 +20,6 @@ export const WebsiteFrameHeader = styled.div`
         border-radius: 24px;
     }
 `;
+
+const Component = () => (<span></span>);
+export default Component

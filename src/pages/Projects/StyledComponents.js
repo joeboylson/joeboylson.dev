@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 // eslint-disable-next-line limited-exports-page-templates
 export const ProjectGridItem = styled.a`
@@ -17,3 +18,6 @@ export const ProjectGridItemTitle = styled.div`
     display: flex;
     justify-content: space-between;
 `;
+
+const Component = () => (<span></span>);
+export default Component

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 export const ImageBoxContainer = styled.div`
     display: grid;
@@ -19,3 +20,6 @@ export const ImageBoxContainer = styled.div`
 export const ImageBoxImage = styled.img`
     width: 100%;
 `;
+
+const Component = () => (<span></span>);
+export default Component;

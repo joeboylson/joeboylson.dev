@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 // eslint-disable-next-line limited-exports-page-templates
 export const GalleryRow = styled.div`
@@ -22,3 +23,6 @@ export const CloseImageLabel = styled.p`
     margin: 4px;
     font-size: 10px;
 `;
+
+const Component = () => (<span></span>);
+export default Component
