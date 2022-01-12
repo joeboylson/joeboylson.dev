@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import styled from "styled-components";
 import BodyCopy from "../../components/BodyCopy";
 import ImageBox from "../../components/ImageBox";
 import LinkList from "../../components/LinkList";
@@ -6,7 +7,16 @@ import Page from "../../components/Page";
 import SpacedContent from "../../components/SpacedContent";
 import { useCursorText } from "../../hooks/useCursorText";
 import { useProfileImage } from "../../hooks/useProfileImage";
-import { GreetingWrapper } from "./StyledComponents";
+
+const GreetingWrapper = styled.div`
+    height: 75vh;
+    display: grid;
+    place-items: center;
+
+    h1 {
+        color: var(--foreground-accent);
+    }
+`;
 
 const IndexPage = () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const StyledSpacedContent = styled.div`
+const StyledSpacedContent = styled.div`
     display: flex;
     flex-direction: column;
     gap: 24px;

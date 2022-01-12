@@ -1,10 +1,22 @@
 import React, { useEffect } from "react"
+import styled from "styled-components";
 import Nav from "../Nav";
 import { withPrefix } from "gatsby-link";
 import { Helmet } from "react-helmet";
-import { PageWrapperContainer, ScrollContainer } from "./StyledComponents";
 
 import "../../index.scss";
+
+const PageWrapperContainer = styled.div`
+    position: relative;
+    max-width: 1400px;
+    margin: auto;
+`
+
+const ScrollContainer = styled.main`
+    padding: 96px 24px;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.17,0.84,0.44,1);
+`;
 
 const PageWrapper = ({children}) => {
 
@@ -23,7 +35,7 @@ const PageWrapper = ({children}) => {
 
             <Nav/>
 
-            <ScrollContainer id="scroll-container">
+            <ScrollContainer>
                 { children }
             </ScrollContainer>
 

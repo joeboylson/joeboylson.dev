@@ -1,6 +1,26 @@
 import React, { useMemo } from "react"
 import Image from 'gatsby-image';
-import { ImageBoxContainer, ImageBoxImage } from "./StyledComponents"
+import styled from "styled-components";
+
+const ImageBoxContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid black;
+    padding: 24px;
+    gap: 24px;
+
+    &.skewright {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    &.skewleft {
+        grid-template-columns: 1fr 3fr;
+    }
+`;
+
+const ImageBoxImage = styled.img`
+    width: 100%;
+`;
 
 const ImageBox = ({ 
   children,

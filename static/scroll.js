@@ -1,4 +1,4 @@
-const getScrollContainer = () => document.getElementById("scroll-container")
+const getScrollContainer = () => document.getElementsByTagName('main')[0]
 
 const scrollMainTo = (value) => {
   const ele = getScrollContainer();

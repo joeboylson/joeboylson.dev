@@ -1,13 +1,29 @@
 import React from "react"
+import styled from "styled-components";
 import BodyCopy from "../../components/BodyCopy"
 import Page from "../../components/Page"
 import Image from 'gatsby-image';
 import Grid from "../../components/Grid";
-import { ProjectGridItem, ProjectGridItemTitle } from "./StyledComponents"
 import { useShortProject } from "../../hooks/useShortProject"
 import { useCursorText } from "../../hooks/useCursorText";
 import { useProjectsImage } from "../../hooks/useProjectsImage";
 import ImageBox from "../../components/ImageBox";
+
+const ProjectGridItem = styled.a`
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+`;
+
+const ProjectGridItemTitle = styled.div`
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 12px;
+    border-top: 1px solid black;
+
+    display: flex;
+    justify-content: space-between;
+`;
 
 const ProjectsPage = () => {
 

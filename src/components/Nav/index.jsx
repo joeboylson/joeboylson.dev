@@ -1,9 +1,26 @@
 import React, { useMemo } from "react"
+import styled from "styled-components";
 import LinkList from "../LinkList"
 import { useLocation } from '@reach/router';
-import { NavContainer, NavLinkListWrapper } from "./StyledComponents"
 import { useCursorText } from "../../hooks/useCursorText"
 
+const NavContainer = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--background);
+    border-bottom: 1px solid black;
+    z-index: +1;
+`;
+    
+const NavLinkListWrapper = styled.div`
+    padding: 12px 36px;
+    display: flex;
+    gap: 6px;
+    margin: auto;
+    max-width: calc(1400px - 48px);
+`;
 
 const Nav = () => {
 

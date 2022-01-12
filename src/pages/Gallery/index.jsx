@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react"
+import React, { useMemo, useState } from "react"
+import styled from "styled-components";
 import BodyCopy from "../../components/BodyCopy"
 import Image from 'gatsby-image';
 import Grid from "../../components/Grid";
@@ -6,9 +7,27 @@ import Page from "../../components/Page";
 import LightBox from "../../components/LightBox";
 import usePortal from 'react-useportal'
 import { useAllSanityGalleryImage } from "../../hooks/useAllSanityGalleryImage"
-import { CloseImageLabel, GalleryRow, SelectedImageContainer } from "./StyledComponents";
 import { useCursorText } from "../../hooks/useCursorText";
-import { isEmpty } from 'lodash';
+
+const GalleryRow = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+`;
+
+const SelectedImageContainer = styled.div`
+    width: ${props => props.orientation === "portrait" ? "40%" : "60%" };
+`;
+
+const CloseImageLabel = styled.p`
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 4px;
+    margin: 4px;
+    font-size: 10px;
+`;
 
 const generateDefaultValue = (numberOfRows) => {
   return Array(numberOfRows).fill([])

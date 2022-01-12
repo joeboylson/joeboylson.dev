@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import SpacedContent from "../../components/SpacedContent";
 import ImageBox from "../../components/ImageBox";
 import Page from "../Page";
@@ -8,7 +9,21 @@ import Image from 'gatsby-image';
 import PortableText from "../PortableText";
 import Grid from "../Grid";
 import { graphql } from 'gatsby';
-import { ProjectTextContent, ProjectTextContentItem } from "./StyledComponents";
+
+const ProjectTextContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    div:nth-child(2) {
+        align-self: flex-end;
+    }
+`;
+
+const ProjectTextContentItem = styled.div`
+    width: 100%;
+    max-width: 700px;
+`;
 
 export const query = graphql`
   query ($id: String!) {

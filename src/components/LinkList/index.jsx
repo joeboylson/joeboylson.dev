@@ -1,8 +1,13 @@
 import React, { useMemo } from "react"
+import styled from "styled-components";
 import FullWidthSolidus from "../FullWidthSolidus";
 import { Link } from "gatsby"
-import { LinkListContainer } from "./StyledComponents";
 import MigraAsterisk from "../MigraAsterisk";
+
+const LinkListContainer = styled.div`
+    display: flex;
+    gap: 4px;
+`;
 
 const LinkList = ({ links, selected=null }) => {
 
