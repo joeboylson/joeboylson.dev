@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Migra-ExtraBold';
+    src: url('./fonts/Migra/Migra-ExtraBold.eot');
+    src: url('./fonts/Migra/Migra-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Migra/Migra-ExtraBold.woff2') format('woff2'),
+        url('./fonts/Migra/Migra-ExtraBold.woff') format('woff'),
+        url('./fonts/Migra/Migra-ExtraBold.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Migra-ExtraLight';
+    src: url('./fonts/Migra/Migra-ExtraLight.eot');
+    src: url('./fonts/Migra/Migra-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Migra/Migra-ExtraLight.woff2') format('woff2'),
+        url('./fonts/Migra/Migra-ExtraLight.woff') format('woff'),
+        url('./fonts/Migra/Migra-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Migra-Regular';
+    src: url('./fonts/Migra/Migra-Regular.eot');
+    src: url('./fonts/Migra/Migra-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Migra/Migra-Regular.woff2') format('woff2'),
+        url('./fonts/Migra/Migra-Regular.woff') format('woff'),
+        url('./fonts/Migra/Migra-Regular.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MigraItalic-ExtraboldItalic';
+    src: url('./fonts/Migra/MigraItalic-ExtraboldItalic.eot');
+    src: url('./fonts/Migra/MigraItalic-ExtraboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Migra/MigraItalic-ExtraboldItalic.woff2') format('woff2'),
+        url('./fonts/Migra/MigraItalic-ExtraboldItalic.woff') format('woff'),
+        url('./fonts/Migra/MigraItalic-ExtraboldItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MigraItalic-ExtralightItalic';
+    src: url('./fonts/Migra/MigraItalic-ExtralightItalic.eot');
+    src: url('./fonts/Migra/MigraItalic-ExtralightItalic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Migra/MigraItalic-ExtralightItalic.woff2') format('woff2'),
+        url('./fonts/Migra/MigraItalic-ExtralightItalic.woff') format('woff'),
+        url('./fonts/Migra/MigraItalic-ExtralightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MigraItalic-Italic';
+    src: url('./fonts/Migra/MigraItalic-Italic.eot');
+    src: url('./fonts/Migra/MigraItalic-Italic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Migra/MigraItalic-Italic.woff2') format('woff2'),
+        url('./fonts/Migra/MigraItalic-Italic.woff') format('woff'),
+        url('./fonts/Migra/MigraItalic-Italic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --background: ghostwhite;
+    --background-accent: #e9e7f0;
+    --foreground: #2C2C2C;
+    --foreground-accent: #014afe;
+    
+    --secondary-background: #014afe;
+    --secondary-background-accent: #2C2C2C;
+    --secondary-foreground: ghostwhite;
+    --secondary-foreground-accent: #e9e7f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    overscroll-behavior: none;
+    cursor: crosshair !important;
+    color: var(--foreground);
+}
+
+*::selection {
+    background-color: var(--foreground-accent);
+    color: #ffeb7b;
+}
+
+body {
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+#___gatsby {
+    background-color: ghostwhite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-size: 96px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h1, h2, h3 {
+    font-family: "Migra-Extrabold";
+}
+
+p,
+a {
+    line-height: 24px;
+}
+
+a { 
+    color: var(--foreground-accent);
+    text-decoration: none;
+}
+
+#cursor-span {
+    z-index: +2;
+    position: fixed;
+    background-color: white;
+    transition-duration: 100ms;
+    pointer-events: none;
+    padding: 2px;
+    color: var(--foreground-accent);
+    border: 1px solid black;
+    font-weight: 300;
+
+    &.active {
+        padding: 4px 8px;
+    }
+}

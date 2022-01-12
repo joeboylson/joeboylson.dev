@@ -1,7 +1,12 @@
 import React from 'react';
 import BasePortableText from '@sanity/block-content-to-react';
+import styled from 'styled-components';
 
-import './style.scss';
+const StyledBasePortableText = styled(BasePortableText)`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`
 
 const serializers = {
   types: {
@@ -14,7 +19,7 @@ const serializers = {
 }
 
 const PortableText = ({blocks}) => (
-  <BasePortableText blocks={blocks} serializers={serializers} className="portable-text"/>
+  <StyledBasePortableText blocks={blocks} serializers={serializers} className="js-body-copy"/>
 );
 
 export default PortableText;
