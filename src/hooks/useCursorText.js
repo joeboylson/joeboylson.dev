@@ -35,11 +35,13 @@ const makeCursorSpan = () => {
       return cursorSpan.style.transform = `translate( ${e.clientX - 21}px, ${e.clientY + (21/2)}px )`;
     })
 
-    window.addEventListener('wheel', () => {
+    const clearText = () => { 
       cursorSpan.innerHTML = null;
       cursorSpan.classList.remove('active');
-    }, false)
-    window.addEventListener('page-change', () => cursorSpan.innerHTML = null, false)
+    };
+    
+    window.addEventListener('wheel', clearText, false)
+    window.addEventListener('page-change', clearText, false)
 
     return cursorSpan;
 }
