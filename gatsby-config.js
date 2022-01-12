@@ -23,7 +23,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `public/joeboylson.dev-icon.jpg`,
+        icon: `public/joeboylson-dev-icon.jpg`,
       },
     },
     {
