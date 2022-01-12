@@ -1,6 +1,6 @@
 import React, { useMemo } from "react"
 import Image from 'gatsby-image';
-import { ImageBoxContainer, ImageBoxImage } from "./StyledContainer"
+import { ImageBoxContainer, ImageBoxImage } from "./StyledComponents"
 
 const ImageBox = ({ 
   children,
